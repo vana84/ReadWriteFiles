@@ -1,0 +1,10 @@
+const fs = require("fs");
+console.log("Read and write json");
+var contents =fs.readFileSync("./files/test.json");
+console.log("content "+ contents);
+var config=JSON.parse(contents);
+config.name="Wipro Ltd";
+let writeData = JSON.stringify(config,null,2);
+fs.writeFileSync("./files/newTest.json",writeData);
+var contents = fs.readFileSync("./files/newTest.json");
+console.log("newcontent "+ contents);
